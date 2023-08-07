@@ -79,21 +79,6 @@ int main()
         else if(selection =='Q' || selection =='q'){
             cout<<endl;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }while(selection !='q' && selection !='Q');
 
     cout<<endl;
