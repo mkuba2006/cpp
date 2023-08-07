@@ -1,36 +1,29 @@
-#include <iostream>
-#include <string>
-
+#include<iostream>
 using namespace std;
 
 int main()
 {
-    string t, szyfrogram = "";
-    int i, klucz;
-    int kod;
+    int n, i, j;
+    cout<<"Ile liczb: "<<endl;
+    cin>>n;
 
-    cout << "Tekst jawny: ";
-    getline(cin, t);
+    int tab[n];
+    for(i=0; i<n; i++) {
+        cout<<"Podaj liczbe: "<<endl;
+        cin>>tab[i];
+    }
 
-    cout << "Klucz: ";
-    cin >> klucz;
-
-    for(i = 0; i < t.size(); i++)
-    {
-        if(toupper(t[i])>='A' && toupper(t[i])<='Z'){
-            kod = t[i] + klucz;
-            if ((t[i]<='Z' && kod>'Z') || (t[i]>='a' && kod>'z')){
-                kod = kod - 26;
+    for(i=0; i<n-1; i++) {
+        for(j=0; j<n-i-1; j++) {
+            if(tab[j] > tab[j+1]) {
+                swap(tab[j], tab[j+1]);
             }
-            szyfrogram = szyfrogram + char(kod);
-        }
-        
-        else{
-            szyfrogram = szyfrogram + t[i];
         }
     }
 
-    cout << "Szyfrogram: " << szyfrogram;
+    for(i=0; i<n; i++) {
+        cout<<tab[i]<<" ";
+    }
 
     return 0;
 }
