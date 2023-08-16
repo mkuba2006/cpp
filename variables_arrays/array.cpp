@@ -5,7 +5,7 @@ using namespace std;
 int main(){
 
     
-    int arr[5] {111,2,3,4,5};
+    int arr[5] {111,2,3,4,5};  // can be int arr[5] {};
     cin >> arr[1] >> arr[2] >> arr[3] >> arr[4] >> arr[5];
     cout << "========" <<endl;
     cout << "arr1 :" << arr[0] <<endl;
