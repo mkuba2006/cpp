@@ -19,8 +19,8 @@ void Wypisz(int A[]){
 
 void Sortuj(int A[]){
     int i, j, z;
-     for(i=1;i<N;i++){
-        for(j=0;j<N-i;j++){
+     for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
             if(A[j]>A[j+1]){
                 z = A[j];
                 A[j] = A[j+1]; 
