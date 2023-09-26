@@ -3,7 +3,7 @@
 #include <cstdlib>
 using namespace std;
 
-const int N = 1;
+const int N = 10;
 
 void Losowe(int A[]){
     for(int i=0; i<N;i++){
@@ -13,16 +13,15 @@ void Losowe(int A[]){
 
 void Wypisz(int A[]){
     for(int i=0; i<N;i++){
-        cout<< A[i]<<" ";
+        cout<< A[i]<<", ";
     }
+    cout<<endl;
 }
 
 
 void skroc(int A[]){
-     for(int i=0;i<N;i++)
-     {
-        int liczba = 11;
-       // cout<<liczba<<" :";
+     for(int i=0;i<N;i++){
+        int liczba = A[i];
         int suma = 0;
         int cyfra=0;
         while(liczba>0)
@@ -30,19 +29,22 @@ void skroc(int A[]){
             cyfra = liczba % 10;
             suma += cyfra;
             liczba = liczba / 10;
-            cout<<cyfra<<" ";
         }
+        cout<<"Suma["<<i<<"] "<<suma<<endl;
         A[i]=suma;
     }  
 }
 
+
+
+
+
+
+
 void Sortuj(int A[]){
     int i, j, z;
      for(i=0;i<N;i++){
-        int x = A[i];
-        x = x%10;
-        A[i]=x;
-        for(j=0;j<N;j++){
+        for(j=0;j<N-1;j++){
             if(A[j]>A[j+1]){
                 z = A[j];
                 A[j] = A[j+1]; 
@@ -60,6 +62,7 @@ int main()
     int A[N];
     srand(time(NULL));
     Losowe(A);
+    Wypisz(A);
     skroc(A);
     Sortuj(A);
     Wypisz(A);
