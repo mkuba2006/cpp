@@ -5,27 +5,27 @@ using namespace std;
 
 
 
-//              silnia
-// long long int SilniaRek(short int n){
-//     if(n<2) return 1;
-//     return SilniaRek(n-1) * n;
-// }
+//silnia
+long long int SilniaRek(short int n){
+    if(n<2){
+      return 1;  
+    }
+    return SilniaRek(n-1) * n;
+}
 
 
 
-//              iteracja
+//iteracja
 
-// long long int SilniaRek(int n){
-//     int silnia=1, i;
-//     for(i=1;i<=n;i++){
-//         silnia= silnia *i;
-//     }
-//     return silnia;
-// }
+long long int SilniaITER(int n){
+    int silnia=1, i;
+    for(i=1;i<=n;i++){
+        silnia*=i;
+    }
+    return silnia;
+}
 
-//              caigiom fibonaciego
-
-
+//caigiom fibonaciego
 long long int fib(int n){
     if(n==0)return 0;
     if(n==1)return 1;
@@ -34,24 +34,13 @@ long long int fib(int n){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 int main()
 {
     int n;
     cout<<"n:";
     cin>>n;
-    // cout<<SilniaRek(n);
-    cout<<fib(n);
+    cout<<"rekurencja: "<<SilniaRek(n)<<endl;
+    cout<<"iteracja: "<<SilniaITER(n)<<endl;
+    cout<<"ciąg fibonaciego: "<<fib(n)<<endl;
     return 0;
 }
